@@ -8,12 +8,22 @@ export default function NasaEvents() {
   const [answer, setAnswer] = useState(null)
 
   useEffect(() => {
+    const today = new Date().toISOString().slice(0, 10)
+    const cached = localStorage.getItem('apod_' + today)
+
+    if (cached) {
+      setApod(JSON.parse(cached))
+      setLoading(false)
+      return
+    }
+
     fetch(`https://api.nasa.gov/planetary/apod?api_key=${import.meta.env.VITE_NASA_API_KEY}`)
       .then((res) => {
         if (!res.ok) throw new Error(`Request failed: ${res.status}`)
         return res.json()
       })
       .then((data) => {
+        localStorage.setItem('apod_' + today, JSON.stringify(data))
         setApod(data)
         setLoading(false)
       })
