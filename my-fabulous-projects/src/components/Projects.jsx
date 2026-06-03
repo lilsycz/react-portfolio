@@ -13,10 +13,16 @@ function ProjectCard({ name, screenshot, github, tech, writeUp, whatItDoes, what
   const [expanded, setExpanded] = useState(false)
 
   return (
-    <div className={`project-card${expanded ? ' project-card--expanded' : ''}`}>
+    <div
+      className={`project-card${expanded ? ' project-card--expanded' : ''}`}
+      onClick={() => setExpanded((v) => !v)}
+      role="button"
+      tabIndex={0}
+      onKeyDown={(e) => e.key === 'Enter' && setExpanded((v) => !v)}
+    >
       <div className="project-image">
         {screenshot ? (
-          <img src={screenshot} alt={`${name} screenshot`} />
+          <img src={screenshot} alt={name} />
         ) : (
           <div className="project-image-placeholder" aria-hidden="true" />
         )}
@@ -34,17 +40,16 @@ function ProjectCard({ name, screenshot, github, tech, writeUp, whatItDoes, what
 
         <div className="project-actions">
           {github && (
-            <a href={github} target="_blank" rel="noopener noreferrer" className="project-link project-link--secondary">
+            <a
+              href={github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="project-link project-link--secondary"
+              onClick={(e) => e.stopPropagation()}
+            >
               GitHub
             </a>
           )}
-          <button
-            className="project-link project-link--toggle"
-            onClick={() => setExpanded((v) => !v)}
-            aria-expanded={expanded}
-          >
-            {expanded ? 'Show less' : 'Read more'}
-          </button>
         </div>
 
         {expanded && (

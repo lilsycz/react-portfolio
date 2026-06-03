@@ -37,26 +37,29 @@
 
 .project-card {
   border: 1px solid var(--border);
-  border-radius: 12px;
+  border-radius: 0;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   background: var(--bg);
-  transition: box-shadow 0.25s, transform 0.25s;
+  transition: transform 0.25s;
+  height: 460px;
+  cursor: pointer;
 
   &:hover {
-    box-shadow: var(--shadow);
-    transform: translateY(-2px);
+    transform: scale(1.1);
   }
 
   &.project-card--expanded {
     transform: none;
+    height: auto;
   }
 }
 
 .project-image {
   width: 100%;
-  aspect-ratio: 16 / 9;
+  height: 180px;
+  flex-shrink: 0;
   overflow: hidden;
   background: var(--code-bg);
 
@@ -91,20 +94,24 @@
 .project-tag {
   font-size: 12px;
   font-family: var(--mono);
-  padding: 3px 8px;
-  border-radius: 4px;
-  background: var(--accent-bg);
+  padding: 0;
+  background: none;
   color: var(--accent);
   letter-spacing: 0.3px;
+
+  &::before {
+    content: '• ';
+  }
 }
 
 .project-title {
-  font-family: var(--heading);
-  font-size: 18px;
-  font-weight: 500;
-  color: var(--text-h);
+  font-family: 'Press Start 2P', monospace;
+  font-size: 16px;
+  font-weight: 400;
+  color: #1040C1;
   margin: 0;
-  letter-spacing: -0.2px;
+  letter-spacing: 0;
+  line-height: 160%;
 }
 
 .project-description {
@@ -116,13 +123,14 @@
 .project-actions {
   display: flex;
   gap: 8px;
-  margin-top: 4px;
+  margin-top: auto;
+  padding-top: 12px;
 }
 
 .project-link {
   font-size: 14px;
   padding: 6px 14px;
-  border-radius: 6px;
+  border-radius: 0;
   text-decoration: none;
   font-weight: 500;
   cursor: pointer;
@@ -135,16 +143,11 @@
 }
 
 .project-link--secondary {
-  background: var(--social-bg);
-  color: var(--text-h);
-  border: 1px solid var(--border);
+  background: #1040C1;
+  color: #fff;
+  border: none;
 }
 
-.project-link--toggle {
-  background: transparent;
-  color: var(--accent);
-  border: 1px solid var(--accent-border);
-}
 
 .project-details {
   display: flex;
