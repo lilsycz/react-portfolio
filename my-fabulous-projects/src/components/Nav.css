@@ -3,28 +3,13 @@
   gap: 32px;
   padding: 20px 32px;
   border-bottom: 1px solid var(--border);
-
-  @media (max-width: 640px) {
-    gap: 20px;
-    padding: 16px 20px;
-  }
 }
 
 .nav-link {
-  font-size: 14px;
-  font-family: var(--mono);
   text-decoration: none;
   color: var(--text);
-  letter-spacing: 0.5px;
-  transition: color 0.2s;
+}
 
-  &:hover {
-    color: var(--text-h);
-  }
-
-  &.active {
-    color: var(--text-h);
-    border-bottom: 2px solid #1040C1;
-    padding-bottom: 2px;
-  }
+.nav-link:hover {
+  color: var(--text-h);
 }
