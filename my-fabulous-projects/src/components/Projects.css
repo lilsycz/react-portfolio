@@ -50,10 +50,6 @@
     transform: scale(1.1);
   }
 
-  &.project-card--expanded {
-    transform: none;
-    height: auto;
-  }
 }
 
 .project-image {
@@ -149,33 +145,3 @@
 }
 
 
-.project-details {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  margin-top: 6px;
-  padding-top: 16px;
-  border-top: 1px solid var(--border);
-}
-
-.project-detail-row {
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-}
-
-.project-detail-label {
-  font-size: 11px;
-  font-family: var(--mono);
-  text-transform: uppercase;
-  letter-spacing: 0.6px;
-  color: var(--accent);
-  font-weight: 600;
-}
-
-.project-detail-value {
-  font-size: 14px;
-  line-height: 155%;
-  color: var(--text);
-  margin: 0;
-}

@@ -1,28 +1,19 @@
 import { useState } from 'react'
+import Modal from './Modal'
+import './Modal.css'
 
-function DetailRow({ label, children }) {
-  return (
-    <div className="project-detail-row">
-      <span className="project-detail-label">{label}</span>
-      <p className="project-detail-value">{children}</p>
-    </div>
-  )
-}
-
-function ProjectCard({ name, screenshot, github, tech, writeUp, whatItDoes, whatYouLearned, role, challenges }) {
-  const [expanded, setExpanded] = useState(false)
-
+function ProjectCard({ project, onSelect }) {
   return (
     <div
-      className={`project-card${expanded ? ' project-card--expanded' : ''}`}
-      onClick={() => setExpanded((v) => !v)}
+      className="project-card"
+      onClick={() => onSelect(project)}
       role="button"
       tabIndex={0}
-      onKeyDown={(e) => e.key === 'Enter' && setExpanded((v) => !v)}
+      onKeyDown={(e) => e.key === 'Enter' && onSelect(project)}
     >
       <div className="project-image">
-        {screenshot ? (
-          <img src={screenshot} alt={name} />
+        {project.screenshot ? (
+          <img src={project.screenshot} alt={project.name} />
         ) : (
           <div className="project-image-placeholder" aria-hidden="true" />
         )}
@@ -30,18 +21,18 @@ function ProjectCard({ name, screenshot, github, tech, writeUp, whatItDoes, what
 
       <div className="project-body">
         <div className="project-tags">
-          {tech.map((t) => (
+          {project.tech.map((t) => (
             <span key={t} className="project-tag">{t}</span>
           ))}
         </div>
 
-        <h3 className="project-title">{name}</h3>
-        <p className="project-description">{writeUp}</p>
+        <h3 className="project-title">{project.name}</h3>
+        <p className="project-description">{project.writeUp}</p>
 
         <div className="project-actions">
-          {github && (
+          {project.github && (
             <a
-              href={github}
+              href={project.github}
               target="_blank"
               rel="noopener noreferrer"
               className="project-link project-link--secondary"
@@ -51,29 +42,26 @@ function ProjectCard({ name, screenshot, github, tech, writeUp, whatItDoes, what
             </a>
           )}
         </div>
-
-        {expanded && (
-          <div className="project-details">
-            <DetailRow label="What it does">{whatItDoes}</DetailRow>
-            <DetailRow label="What I learned">{whatYouLearned}</DetailRow>
-            <DetailRow label="Challenges">{challenges}</DetailRow>
-            {role && <DetailRow label="My role">{role}</DetailRow>}
-          </div>
-        )}
       </div>
     </div>
   )
 }
 
 export default function Projects({ projects }) {
+  const [selectedProject, setSelectedProject] = useState(null)
+
   return (
     <section id="projects">
       <h2 className="projects-heading">Projects</h2>
       <div className="projects-grid">
         {projects.map((project) => (
-          <ProjectCard key={project.id} {...project} />
+          <ProjectCard key={project.id} project={project} onSelect={setSelectedProject} />
         ))}
       </div>
+
+      {selectedProject && (
+        <Modal {...selectedProject} onClose={() => setSelectedProject(null)} />
+      )}
     </section>
   )
 }
