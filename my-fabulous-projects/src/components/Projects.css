@@ -1,3 +1,21 @@
+.search-bar {
+  display: block;
+  width: 100%;
+  padding: 10px 16px;
+  font-size: 15px;
+  font-family: var(--mono);
+  background: var(--code-bg);
+  color: var(--text-h);
+  border: 1px solid var(--border);
+  border-radius: 0;
+  box-sizing: border-box;
+  outline: none;
+
+  &:focus {
+    border-color: #1040C1;
+  }
+}
+
 #projects {
   padding: 48px 32px;
   border-top: 1px solid var(--border);

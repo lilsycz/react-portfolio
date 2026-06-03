@@ -45,6 +45,14 @@ const projects = [
 
 export default function Portfolio() {
   const [show, setShow] = useState(false)
+  const [query, setQuery] = useState('')
+
+  const filtered = projects.filter((project) => {
+    const q = query.toLowerCase()
+    const matchesName = project.name.toLowerCase().includes(q)
+    const matchesTech = project.tech.some((t) => t.toLowerCase().includes(q))
+    return matchesName || matchesTech
+  })
 
   return (
     <div>
@@ -52,7 +60,18 @@ export default function Portfolio() {
         {show ? 'Hide Projects' : 'Explore Projects'}
       </button>
 
-      {show && <Projects projects={projects} />}
+      {show && (
+        <>
+          <input
+            type="text"
+            placeholder="Search by name or tech..."
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            className="search-bar"
+          />
+          <Projects projects={filtered} />
+        </>
+      )}
     </div>
   )
 }
