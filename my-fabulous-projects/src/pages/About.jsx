@@ -1,72 +1,12 @@
 import './About.css'
 
 const skills = [
-  {
-    category: 'Frontend',
-    items: ['HTML5 / CSS3', 'JavaScript', 'React.js', 'TypeScript'],
-  },
-  {
-    category: 'Workflow',
-    items: ['MS Office', 'Git / Version Control', 'REST API Integration', 'Shopify / WordPress'],
-  },
-  {
-    category: 'Architecture & 3D',
-    items: ['Rhino + Grasshopper', 'Revit / AutoCAD', 'SketchUp', 'Blender'],
-  },
-  {
-    category: 'Visualisation',
-    items: ['V-Ray / Enscape', 'Unreal Engine 5', 'Unity', 'Applied Robotics'],
-  },
-  {
-    category: 'Design & UX',
-    items: ['Figma', 'Adobe Illustrator', 'Adobe Photoshop', 'Adobe InDesign'],
-  },
-  {
-    category: 'Languages',
-    items: ['Mandarin (Native)', 'English (Fluent)', 'Swedish'],
-  },
-]
-
-const education = [
-  {
-    degree: 'IT: Front-end Development',
-    school: 'Sundsgårdens Folkhögskola',
-    location: 'Sweden',
-    period: 'Jan 2026 — Present',
-    tags: ['React.js', 'JavaScript', 'HTML/CSS', 'Component-based development'],
-  },
-  {
-    degree: 'MSc, Digital Architecture',
-    school: 'Lund University',
-    location: 'Sweden',
-    period: '2023 — 2025',
-    tags: ['Computational Design', 'Applied Robotics', 'Biomaterials', 'Space Architecture'],
-  },
-  {
-    degree: 'BA, Environmental Design',
-    school: 'China Three Gorges University',
-    location: 'China',
-    period: '2018 — 2022',
-    tags: ['Sustainable Materials', 'Interior Design', 'Light Design', 'Spatial Design'],
-  },
-]
-
-const awards = [
-  { title: 'Lund University Global Scholarship (Top 1.8%)', year: '2023' },
-  { title: 'China National Encouragement Scholarship (Top 2%)', year: '2019 — 2022' },
-  { title: 'First-Class Scholarship (Top 3%)', year: '2019 — 2022' },
-  { title: 'Outstanding Graduate Thesis and Dissertation (Top 5%)', year: '2022' },
-]
-
-const publications = [
-  {
-    title: '"The Living Habitat: A Self-Monitoring and Self-Repairing System for Lunar Architecture"',
-    detail: "Master's Thesis (2025)",
-  },
-  {
-    title: '"Exploration and Reflection on the Construction of Humanized Space in the Post-Industrial Era"',
-    detail: 'City & House, Vol 08 (2021), p. 212–21.',
-  },
+  { category: 'Frontend', items: ['HTML5 / CSS3', 'JavaScript', 'React.js', 'TypeScript'] },
+  { category: 'Workflow', items: ['MS Office', 'Git / Version Control', 'REST API Integration', 'Shopify / WordPress'] },
+  { category: 'Architecture & 3D', items: ['Rhino + Grasshopper', 'Revit / AutoCAD', 'SketchUp', 'Blender'] },
+  { category: 'Visualisation', items: ['V-Ray / Enscape', 'Unreal Engine 5', 'Unity', 'Applied Robotics'] },
+  { category: 'Design & UX', items: ['Figma', 'Adobe Illustrator', 'Adobe Photoshop', 'Adobe InDesign'] },
+  { category: 'Languages', items: ['Mandarin (Native)', 'English (Fluent)', 'Swedish'] },
 ]
 
 const experiences = [
@@ -112,6 +52,48 @@ const experiences = [
   },
 ]
 
+const education = [
+  {
+    degree: 'IT: Front-end Development',
+    school: 'Sundsgårdens Folkhögskola',
+    location: 'Sweden',
+    period: 'Jan 2026 — Present',
+    tags: ['React.js', 'JavaScript', 'HTML/CSS', 'Component-based development'],
+  },
+  {
+    degree: 'MSc, Digital Architecture',
+    school: 'Lund University',
+    location: 'Sweden',
+    period: '2023 — 2025',
+    tags: ['Computational Design', 'Applied Robotics', 'Biomaterials', 'Space Architecture'],
+  },
+  {
+    degree: 'BA, Environmental Design',
+    school: 'China Three Gorges University',
+    location: 'China',
+    period: '2018 — 2022',
+    tags: ['Sustainable Materials', 'Interior Design', 'Light Design', 'Spatial Design'],
+  },
+]
+
+const awards = [
+  { title: 'Lund University Global Scholarship (Top 1.8%)', year: '2023' },
+  { title: 'China National Encouragement Scholarship (Top 2%)', year: '2019 — 2022' },
+  { title: 'First-Class Scholarship (Top 3%)', year: '2019 — 2022' },
+  { title: 'Outstanding Graduate Thesis and Dissertation (Top 5%)', year: '2022' },
+]
+
+const publications = [
+  {
+    title: '"The Living Habitat: A Self-Monitoring and Self-Repairing System for Lunar Architecture"',
+    detail: "Master's Thesis (2025)",
+  },
+  {
+    title: '"Exploration and Reflection on the Construction of Humanized Space in the Post-Industrial Era"',
+    detail: 'City & House, Vol 08 (2021), p. 212–21.',
+  },
+]
+
 export default function About() {
   return (
     <section id="about">
@@ -142,7 +124,6 @@ export default function About() {
         <p className="about-background">Designer and frontend developer working at the intersection of physical space and digital interface. Background in Environmental Design and Digital Architecture, now deepening React.js and component-based development. Both disciplines share the same obsession with structure, proportion, and user experience.</p>
 
         <h2 className="about-section-title">Experience</h2>
-
         <div className="experience-list">
           {experiences.map((exp, i) => (
             <div key={i} className="experience-item">
@@ -153,13 +134,11 @@ export default function About() {
                 </div>
                 <span className="experience-period">{exp.period}</span>
               </div>
-
               <ul className="experience-bullets">
                 {exp.bullets.map((b, j) => (
                   <li key={j}>{b}</li>
                 ))}
               </ul>
-
               <div className="experience-tags">
                 {exp.tags.map((tag) => (
                   <span key={tag} className="experience-tag">{tag}</span>
@@ -168,6 +147,7 @@ export default function About() {
             </div>
           ))}
         </div>
+
         <h2 className="about-section-title">Education</h2>
         <div className="experience-list">
           {education.map((edu, i) => (

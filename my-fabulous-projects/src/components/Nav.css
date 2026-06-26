@@ -8,8 +8,14 @@
 .nav-link {
   text-decoration: none;
   color: var(--text);
+  font-family: var(--mono);
+  font-size: 28px;
+  text-transform: uppercase;
+  transition: color 0.2s, transform 0.2s;
+  display: inline-block;
 }
 
 .nav-link:hover {
-  color: var(--text-h);
+  color: #1040C1;
+  transform: scale(1.15);
 }
