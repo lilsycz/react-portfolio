@@ -1,0 +1,249 @@
+#about {
+  display: flex;
+  padding: 48px 32px;
+  gap: 48px;
+  align-items: flex-start;
+  text-align: left;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 24px;
+  }
+}
+
+/* Sidebar */
+
+.about-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  border-right: 1px solid var(--border);
+  padding-right: 24px;
+  flex-shrink: 0;
+
+  @media (max-width: 768px) {
+    flex-direction: row;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+    padding-right: 0;
+    padding-bottom: 16px;
+    writing-mode: horizontal-tb;
+  }
+}
+
+.about-sidebar-text {
+  font-size: 11px;
+  font-family: var(--mono);
+  color: var(--text);
+  letter-spacing: 0.6px;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  white-space: nowrap;
+
+  @media (max-width: 768px) {
+    writing-mode: horizontal-tb;
+    transform: none;
+  }
+}
+
+/* Main content */
+
+.about-content {
+  flex: 1;
+  max-width: 720px;
+}
+
+.about-intro {
+  font-size: 16px;
+  line-height: 165%;
+  color: var(--text);
+  margin: 0 0 48px;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px 24px;
+  margin-bottom: 48px;
+
+  @media (max-width: 640px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.skills-category {
+  font-size: 11px;
+  font-family: var(--mono);
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: #1040C1;
+  margin: 0 0 10px;
+  font-weight: 600;
+}
+
+.skills-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.skills-list li {
+  font-size: 14px;
+  color: var(--text);
+  font-family: var(--mono);
+}
+
+.about-background {
+  font-size: 15px;
+  line-height: 170%;
+  color: var(--text);
+  margin: 0 0 48px;
+}
+
+.about-section-title {
+  font-size: 11px;
+  font-family: var(--mono);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--accent);
+  margin: 0 0 24px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border);
+}
+
+/* Experience items */
+
+.experience-list {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-bottom: 48px;
+}
+
+.experience-item {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.experience-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+
+  @media (max-width: 640px) {
+    flex-direction: column;
+    gap: 4px;
+  }
+}
+
+.experience-title {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 11px;
+  font-weight: 400;
+  color: #1040C1;
+  margin: 0 0 6px;
+  line-height: 160%;
+}
+
+.experience-company {
+  font-size: 13px;
+  font-family: var(--mono);
+  color: var(--text);
+  margin: 0;
+}
+
+.experience-period {
+  font-size: 12px;
+  font-family: var(--mono);
+  color: var(--text);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.experience-bullets {
+  margin: 0;
+  padding-left: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.experience-bullets li {
+  font-size: 14px;
+  line-height: 160%;
+  color: var(--text);
+}
+
+.experience-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.awards-list,
+.publications-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 48px;
+  display: flex;
+  flex-direction: column;
+}
+
+.award-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.award-title {
+  font-size: 14px;
+  color: var(--text-h);
+}
+
+.award-year {
+  font-size: 12px;
+  font-family: var(--mono);
+  color: var(--text);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.publication-item {
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.publication-title {
+  font-size: 14px;
+  color: var(--text-h);
+  margin: 0;
+  font-style: italic;
+}
+
+.publication-detail {
+  font-size: 12px;
+  font-family: var(--mono);
+  color: var(--text);
+  margin: 0;
+}
+
+.experience-tag {
+  font-size: 11px;
+  font-family: var(--mono);
+  color: var(--text-h);
+  letter-spacing: 0.3px;
+  padding: 3px 10px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+}
