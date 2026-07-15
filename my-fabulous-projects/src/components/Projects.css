@@ -24,6 +24,10 @@
   @media (max-width: 1024px) {
     padding: 32px 20px;
   }
+
+  @media (max-width: 320px) {
+    padding: 20px 14px;
+  }
 }
 
 .projects-heading {
@@ -68,6 +72,9 @@
     transform: scale(1.1);
   }
 
+  @media (max-width: 320px) {
+    height: auto;
+  }
 }
 
 .project-image {
@@ -97,6 +104,10 @@
   flex-direction: column;
   flex: 1;
   gap: 10px;
+
+  @media (max-width: 320px) {
+    padding: 14px;
+  }
 }
 
 .project-tags {

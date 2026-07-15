@@ -3,6 +3,12 @@
   gap: 32px;
   padding: 20px 32px;
   border-bottom: 1px solid var(--border);
+
+  @media (max-width: 320px) {
+    gap: 12px;
+    padding: 14px 16px;
+    flex-wrap: wrap;
+  }
 }
 
 .nav-link {
@@ -13,6 +19,10 @@
   text-transform: uppercase;
   transition: color 0.2s, transform 0.2s;
   display: inline-block;
+
+  @media (max-width: 320px) {
+    font-size: 15px;
+  }
 }
 
 .nav-link:hover {

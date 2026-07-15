@@ -5,6 +5,10 @@
   @media (max-width: 640px) {
     padding: 32px 20px;
   }
+
+  @media (max-width: 320px) {
+    padding: 24px 14px;
+  }
 }
 
 .home-hero {
