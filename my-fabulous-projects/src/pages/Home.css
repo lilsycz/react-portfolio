@@ -70,3 +70,26 @@
     text-align: left;
   }
 }
+
+.contact-cta {
+  font-size: 13px;
+  font-family: var(--mono);
+  color: #1040C1;
+  text-decoration: none;
+  text-align: right;
+  padding: 6px 14px;
+  border: 1px solid var(--accent-border);
+  background: var(--accent-bg);
+  white-space: nowrap;
+
+  &:hover {
+    background: #1040C1;
+    color: #fff;
+  }
+
+  @media (max-width: 480px) {
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+  }
+}

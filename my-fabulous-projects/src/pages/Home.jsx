@@ -1,8 +1,8 @@
 import './Home.css'
 
 const contact = [
-  { label: 'Email', value: 'jadezxchan@gmail.com', href: 'mailto:jadezxchan@gmail.com' },
-  { label: 'Phone', value: '+46 793 531 881', href: 'tel:+46793531881' },
+  { label: 'Email', href: 'mailto:jadezxchan@gmail.com', cta: 'Send me an email' },
+  { label: 'Phone', href: 'tel:+46793531881', cta: 'Give me a call' },
   { label: 'LinkedIn', value: 'linkedin.com/in/jadezxchen', href: 'https://linkedin.com/in/jadezxchen' },
   { label: 'Based in', value: 'Helsingborg, Sweden · Open to relocate', href: null },
   { label: 'Availability', value: 'Available immediately', href: null },
@@ -22,7 +22,11 @@ export default function Home() {
           {contact.map((item) => (
             <li key={item.label} className="contact-item">
               <span className="contact-label">{item.label}</span>
-              {item.href ? (
+              {item.cta ? (
+                <a href={item.href} className="contact-cta">
+                  {item.cta}
+                </a>
+              ) : item.href ? (
                 <a href={item.href} className="contact-value" target={item.href.startsWith('http') ? '_blank' : undefined} rel="noopener noreferrer">
                   {item.value}
                 </a>
