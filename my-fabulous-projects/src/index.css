@@ -1,15 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 :root {
-  --text: #a0a0a0;
-  --text-h: #f0f0f0;
-  --bg: #111111;
-  --border: #2a2a2a;
-  --code-bg: #1a1a1a;
-  --accent: #e5e5e5;
-  --accent-bg: rgba(229, 229, 229, 0.08);
-  --accent-border: rgba(229, 229, 229, 0.25);
-  --social-bg: rgba(255, 255, 255, 0.05);
+  --text: #4b5563;
+  --text-h: #111111;
+  --bg: #ffffff;
+  --border: #e5e5e5;
+  --code-bg: #f5f5f5;
+  --accent: #111827;
+  --accent-bg: rgba(0, 0, 0, 0.05);
+  --accent-border: rgba(0, 0, 0, 0.15);
+  --social-bg: rgba(0, 0, 0, 0.05);
   --shadow:
     rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
 
@@ -29,26 +29,6 @@
 
   @media (max-width: 1024px) {
     font-size: 16px;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #16171d;
-    --border: #2e303a;
-    --code-bg: #1f2028;
-    --accent: #e5e5e5;
-    --accent-bg: rgba(229, 229, 229, 0.1);
-    --accent-border: rgba(229, 229, 229, 0.3);
-    --social-bg: rgba(47, 48, 58, 0.5);
-    --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
-  }
-
-  #social .button-icon {
-    filter: invert(1) brightness(2);
   }
 }
 
